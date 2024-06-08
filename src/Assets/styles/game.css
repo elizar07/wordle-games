@@ -1,0 +1,28 @@
+.main-block{
+	display: flex;
+	flex-wrap: wrap;
+	width: 400px;
+	gap: 15px;
+	margin-top: 100px;
+}
+.wordleGame-content-block{
+	width: 60px;
+	height: 60px;
+	border-radius: 10px;
+	background: linear-gradient(180deg, #F0F0F0 0%, #C2C3C7 100%);
+border: 2px solid rgba(194, 195, 199, 1)
+;cursor: pointer;
+-webkit-box-shadow: 5px 8px 5px 0px rgba(109, 109, 109, 0.495);
+-moz-box-shadow: 5px 8px 5px 0px rgba(101, 101, 101, 0.457);
+box-shadow: 5px 8px 5px 0px rgba(92, 92, 92, 0.498);
+
+
+}
+.main-block-text{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 40px;
+	font-size: 12px;
+	margin-top: 20px;
+}
