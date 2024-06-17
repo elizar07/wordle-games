@@ -1,33 +1,39 @@
-import { useEffect, useState } from "react";
-const API_URL = 'URL_TO_FETCH';
+import { useEffect, useState } from 'react'
 
-const useFetch = () => {
-  const [data, setData] = useState<unknown>(null);
-  const [isLoading, setIsLoading] = useState<boolean>(false);
+const API_URL = 'https://piccolo-server.vercel.app/words'
 
-  const fetchData = async () => {
-    setIsLoading(true);
-    try {
-      const response = await fetch(API_URL);
-      const data = await response.json();
-      if (data.success) {
-        setData(data.data);
-      }
-    } catch (error) {
-      console.error('Error fetching data:', error);
-    } finally {
-      setIsLoading(false);
-    }
-  };
-
-  useEffect(() => {
-    fetchData();
-  }, []);
-
-  return {
-    isLoading,
-    data,
-  };
+interface FetchData {
+	success: boolean
+	data: string[]
 }
 
-export default useFetch;
+const useFetch = () => {
+	const [data, setData] = useState<string[]>([])
+	const [isLoading, setIsLoading] = useState<boolean>(false)
+
+	const fetchData = async () => {
+		setIsLoading(true)
+		try {
+			const response = await fetch(API_URL)
+			const result: FetchData = await response.json()
+			if (result.success) {
+				setData(result.data)
+			}
+		} catch (error) {
+			console.error('Ошибка при получении данных:', error)
+		} finally {
+			setIsLoading(false)
+		}
+	}
+
+	useEffect(() => {
+		fetchData()
+	}, [])
+
+	return {
+		isLoading,
+		data
+	}
+}
+
+export default useFetch
