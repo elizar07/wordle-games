@@ -7,6 +7,7 @@ const WordG = () => {
 	const {
 		word,
 		isLoading,
+		messsage,
 		guesses,
 		gameOver,
 		currentGuesses,
@@ -19,9 +20,10 @@ const WordG = () => {
 	return (
 		<div className='word-container'>
 			{isLoading ? (
-				<p>Загрузка...</p>
+				<p>Loading...</p>
 			) : (
 				<div>
+					<h1>Wordle Game</h1>
 					{Array.from({ length: 6 }, (_, row) => (
 						<div key={row} className='row'>
 							{Array.from({ length: 5 }, (_, col) => {
@@ -42,9 +44,10 @@ const WordG = () => {
 							})}
 						</div>
 					))}
+
 					{gameOver && (
-						<div>
-							<p>Правильное слово: {word}</p>
+						<div className='you-lost'>
+							<p style={{ color: 'black' }}>Правильное слово: {word}</p>
 							<button onClick={initializeGame}>Начать заново</button>
 						</div>
 					)}

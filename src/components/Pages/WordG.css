@@ -2,8 +2,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 60px;
 }
-
+.word-container h1{
+  display: flex;
+  justify-content: center;
+}
 .row {
   display: flex;
 }
@@ -22,3 +26,14 @@ button {
 button:hover {
   background-color: #5a9a54;
 }
+
+.you-lost{
+line-height: 3px;
+display: flex;
+gap: 50px;
+align-items: center;
+}
+.you-lost p{
+margin-top: 20px;
+}
+
