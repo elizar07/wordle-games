@@ -19,6 +19,7 @@ const WordG = () => {
 
 	return (
 		<div className='word-container'>
+			<h1>Wordle Games</h1>
 			{isLoading ? (
 				<p>Загрузка...</p>
 			) : (
