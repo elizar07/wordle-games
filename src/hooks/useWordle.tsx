@@ -37,7 +37,7 @@ export const useWordle = () => {
 
 		if (e.key === 'Enter' && currentGuesses.length === 5) {
 			if (currentGuesses === word) {
-				// alert(`Вы угадали слово ${word}`)
+				alert(`Вы угадали слово ${word}`)
 				setGameOver(true)
 				setMessage(false)
 			} else {
